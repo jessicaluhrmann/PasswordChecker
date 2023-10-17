@@ -17,31 +17,25 @@ namespace PasswordChecker
             var password = Console.ReadLine();
 
             if (password.Length >= minLength)
-            {
                 score++;
-            };
 
             if (Tools.Contains(password, uppercase))
-            {
                 score++;
-            };
 
             if (Tools.Contains(password, lowercase))
-            {
                 score++;
-            };
 
             if (Tools.Contains(password, digits))
-            {
                 score++;
-            };
 
             if (Tools.Contains(password, specialChars))
-            {
                 score++;
-            };
 
+            if (password == "password")
+                score = 0;
 
+            if (password == "1234")
+                score = 0;
 
             switch (score)
             {
